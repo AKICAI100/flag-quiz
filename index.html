@@ -11,15 +11,26 @@
   </head>
   <body>
     <main class="app-shell">
-      <section id="quiz-screen" class="card" aria-labelledby="app-title">
+      <section id="title-screen" class="card title-card" aria-labelledby="title-heading">
+        <div class="title-globe" aria-hidden="true">🌏</div>
+        <p class="title-kicker">LET'S TRAVEL THE WORLD!</p>
+        <h1 id="title-heading" class="main-title">WORLD<br>FLAG QUIZ</h1>
+        <p class="language-prompt">ことばを えらんでね<br><span>Choose your language</span></p>
+        <div class="language-buttons">
+          <button class="language-button japanese" type="button" data-language="ja">日本語</button>
+          <button class="language-button english" type="button" data-language="en">English</button>
+        </div>
+      </section>
+
+      <section id="quiz-screen" class="card" aria-labelledby="app-title" hidden>
         <header class="top-bar">
           <div>
-            <p class="eyebrow">せかいを たびしよう！</p>
+            <p id="quiz-eyebrow" class="eyebrow">せかいを たびしよう！</p>
             <h1 id="app-title">こっきクイズ</h1>
           </div>
           <div class="score-pill" aria-label="現在の得点">
             <span aria-hidden="true">⭐</span>
-            <strong id="score">0</strong><span>てん</span>
+            <strong id="score">0</strong><span id="score-unit">てん</span>
           </div>
         </header>
 
@@ -31,7 +42,7 @@
         </div>
 
         <div class="flag-stage">
-          <p class="question-text">この こっきは どこの くに？</p>
+          <p id="question-text" class="question-text">この こっきは どこの くに？</p>
           <div id="flag" class="flag" role="img" aria-label="問題の国旗"></div>
         </div>
 
@@ -43,9 +54,10 @@
         <div class="celebration" aria-hidden="true">🎉 🌏 🎉</div>
         <p class="eyebrow">10もん おわったよ！</p>
         <h2 id="result-title">けっか はっぴょう</h2>
-        <div class="final-score"><strong id="final-score">0</strong><span> / 10 てん</span></div>
+        <div class="final-score"><strong id="final-score">0</strong><span id="final-score-unit"> / 10 てん</span></div>
         <p id="result-message" class="result-message"></p>
         <button id="restart-button" class="restart-button" type="button">もういちど あそぶ</button>
+        <button id="back-to-title-button" class="back-button" type="button">タイトルへ もどる</button>
       </section>
     </main>
   </body>
